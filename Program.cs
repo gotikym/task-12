@@ -5,16 +5,19 @@ internal class Program
     static void Main(string[] args)
     {
         Random random = new Random();
-        int number = random.Next(0, 101);
-        int dividerThree = 3, dividerFive = 5 ;
-        int sum = 0;
+        int minimumConstellations = 0;
+        int maximumConstellations = 101;
+        int dividerForStars1 = 3;
+        int dividerForStars2 = 5;
+        int number = random.Next(minimumConstellations, maximumConstellations);
+        int totalNumberStars = 0;
 
         for (int i = number; i > 0; i--)
         {
-            if (i % dividerThree == 0 || i % dividerFive == 0)
+            if (i % dividerForStars1 == 0 || i % dividerForStars2 == 0)
             {
-                sum = sum + i;
-                Console.WriteLine(sum);
+                totalNumberStars = totalNumberStars + i;
+                Console.WriteLine(totalNumberStars);
             }
         }
     }
